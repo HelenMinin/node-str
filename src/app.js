@@ -9,8 +9,10 @@ const app = express();
 const router = express.Router();
 
 //conecta com o banco de dados
-
 mongoose.connect(secret.connectionstring);
+
+// carrega os models
+const Product = require('./models/products');
 
 // carrega as rotas
 const index = require('./routes/index');
