@@ -1,10 +1,16 @@
 'use strict';
 
+const secret = require('../secret');
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+
+//conecta com o banco de dados
+
+mongoose.connect(secret.connectionstring);
 
 // carrega as rotas
 const index = require('./routes/index');
